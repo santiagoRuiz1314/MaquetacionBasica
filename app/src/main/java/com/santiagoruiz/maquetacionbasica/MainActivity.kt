@@ -46,9 +46,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview(showSystemUi = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun DetalleProducto() {
+fun DetalleProduct() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -66,14 +66,16 @@ fun DetalleProducto() {
 
         Text(
             text = "Nombre del Producto",
-            fontSize = 28.sp,
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 16.dp)
         )
 
         Text(
             text = "$99.99",
-            fontSize = 22.sp,
+            fontSize = 28.sp,
             color = Color.Green,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 8.dp)
         )
 
@@ -82,28 +84,35 @@ fun DetalleProducto() {
             modifier = Modifier.padding(top = 8.dp)
         )
 
-        Spacer(modifier = Modifier.height(8.dp))
-
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 8.dp),
-            horizontalArrangement = Arrangement.SpaceEvenly
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Text(
                 text = "Editar",
                 color = Color.White,
+                textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(Color.Blue)
-                    .padding(all = 8.dp)
+                    .weight(weight = 1f)
+                    .background(
+                        color = Color.Blue,
+                        shape = RoundedCornerShape(8.dp)
+                    )
+                    .padding(top = 10.dp, bottom = 10.dp)
             )
-
             Text(
                 text = "Eliminar",
                 color = Color.White,
+                textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(Color.Red)
-                    .padding(all = 8.dp)
+                    .weight(weight = 1f)
+                    .background(
+                        color = Color.Red,
+                        shape = RoundedCornerShape(8.dp)
+                    )
+                    .padding(top = 10.dp, bottom = 10.dp)
             )
         }
     }
